@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Animation</title>
+	<style type="text/css">
+		.bigBox{
+			width: 500px;
+			height: 500px;
+			background: orange;
+			position: relative;
+		}
+		.smallBox{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			background: yellow;
+			border-radius: 50%;
+		}
+		.box1{
+			width: 70px;
+			height: 70px;
+			left: 30px;
+			position: absolute;
+			background: yellow;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+		<div class="bigBox">
+			<div class="smallBox" onclick="moveBox(this)"></div>
+			<div class="box1" onclick="moveBox(this)"></div>
+		</div>
+	<script type="text/javascript">
+		function moveBox(element) {
+			console.log(element);
+			var px=0;
+			var id=setInterval(animate,10);
+			function animate(){
+				if(px==400){
+					clearInterval(id);
+				}else{
+					px++;
+					element.style.top=px+"px";
+					element.style.left=px+"px";
+
+				}
+			}
+		}
+	</script>
+
+</body>
+</html>
